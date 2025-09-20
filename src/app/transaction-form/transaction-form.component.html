@@ -1,0 +1,20 @@
+<form (ngSubmit)="onSubmit()" #f="ngForm" class="transaction-form">
+  <label>Description</label>
+  <input name="description" [(ngModel)]="description" required />
+
+  <label>Amount</label>
+  <input name="amount" type="number" [(ngModel)]="amount" required />
+
+  <label>Type</label>
+  <select name="type" [(ngModel)]="type">
+    <option value="expense">Expense</option>
+    <option value="income">Income</option>
+  </select>
+
+  <label>Category</label>
+  <select name="category" [(ngModel)]="category">
+    <option *ngFor="let c of categories" [value]="c">{{c}}</option>
+  </select>
+
+  <button type="submit">Add</button>
+</form>
